@@ -11,6 +11,9 @@ a {
 	color: #43707b;
 	text-decoration: none;
 }
+.all-fields {
+	padding: 10px;
+}
 .fb-comments{width: 100% !important;}
 .fb-comments iframe[style]{width: 100% !important;}
 .fb-like-box{ min-width:280px;width: 100% !important;}
@@ -184,14 +187,17 @@ a {
 .sidebar .nav {
 	margin-left: 0;
 }
-.region-sidebar-second #block-views-upcoming-events-block-2 {
+#block-views-upcoming-events-block-2, #block-views-upcoming-events-block-3 {
 	background: #fff;
 }
-.region-sidebar-second #block-views-upcoming-events-block-2  .group-left {
-	margin: 0 10px;
-	background: #d8d8d8;
+#block-views-upcoming-events-block-2 .group-left .views-field-field_event_photo img, #block-views-upcoming-events-block-3 .group-left .views-field-field_event_photo img {
 	border-radius: 50%;
-	border-top: solid 1px #ccccd5;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+	border: 1px solid #000;
+}
+#block-views-upcoming-events-block-2 .group-left, #block-views-upcoming-events-block-3 .group-left {
+	margin: 0 10px;
 	width: 100px;
 	height: 100px;
 	text-align: center;
@@ -199,17 +205,27 @@ a {
 	font-size: 20px;
 	font-weight: bold;
 }
-.region-sidebar-second #block-views-upcoming-events-block-2 .views-row {
+#block-views-upcoming-events-block-2 .views-row, #block-views-upcoming-events-block-3 .views-row {
 	margin-bottom: 20px;
 }
-
-.region-sidebar-second #block-views-upcoming-events-block-2 .group-left .views-field-field_date {
-	padding-top: 14px;
-	padding-bottom: 4px;
+#block-views-upcoming-events-block-2 .group-left .views-field-field_date, #block-views-upcoming-events-block-3 .group-left .views-field-field_date {
+	position: absolute;
+	margin-top: -84px;
+	width: 100px;
+	text-align: center;
 }
-.region-sidebar-second #block-views-upcoming-events-block-2 .group-left .views-field-field_date_1 {
+#block-views-upcoming-events-block-2 .group-left .views-field-field_date_1, #block-views-upcoming-events-block-3 .group-left .views-field-field_date_1 {
 	font-size: 26px;
-	padding-bottom: 4px;
+	position: absolute;
+	margin-top: -60px;
+	width: 100px;
+	text-align: center;
+}
+#block-views-upcoming-events-block-2 .group-left .views-field-field_date_2, #block-views-upcoming-events-block-3 .group-left .views-field-field_date_2 {
+	position: absolute;
+	margin-top: -36px;
+	width: 100px;
+	text-align: center;
 }
 .executive-committee-page-fields .group-left {
 	min-width: 200px;
@@ -233,22 +249,27 @@ a {
 	border: solid 1px #ccccd5;
 	margin-right: 10px;
 }
+.past-award-winners-view .views-row {
+	min-height: 270px;
+}
 .view-id-upcoming_events .views-row img {
 	width: 100%;
 	height: auto;
 }
-.events-view-page-only .views-field-field-date {
+.events-view-page-only .views-field-title {
 	background: #00c861;
 	color: #fff;
 	font-size: 16px;
 	border-bottom: 2px solid #00a14e;
+	padding: 4px;
 }
 .view-id-upcoming_events .views-field-title-1 {
 	text-align: center;
 }
-.view-id-upcoming_events .views-field-title {
+.view-display-id-block_2, view-display-id-block_3 {
 	font-weight: bold;
 }
+
 .view-current-member-institutions .views-row {
 	padding: 10px;
 	clear: none;
@@ -264,6 +285,10 @@ a {
 }
 .view-current-member-institutions .views-row .views-field-name {
 	font-weight: bold;
+}
+.view-job-announcements img.campus-logo {
+	max-width: 176px;
+	height: auto;
 }
 .front #block-block-3 p {
 	text-align: center;
@@ -293,11 +318,14 @@ a.action-btn:hover {
 table {
 	width: 100%;
 }
-tr.odd {
-	
+th, td.active {
+	background-color: #d8d8d8;
 }
-tr.even {
-	
+tr.odd {
+	background-color: #fff;
+}
+tr.even {	
+	background-color: #f5f5f5;
 }
 
 /* ----- Breadcrumbs ----------------- */
@@ -346,10 +374,14 @@ h2 {
 	font-size: 20px;
 	border-bottom: 2px solid #00a14e;
 }
-.front #content-col3-1, .front #content-col3-2, .front #block-views-member-institutions-block {
+.front #content-col3-1, .front #content-col3-2, .front #block-views-member-institutions-block, .front #block-views-job-announcements-block-1 {
 	background: #fff;
 	border: solid 1px #ccccd5;
 	margin: 0 0 1em 0;
+}
+#block-views-job-announcements-block-1 .view-footer {
+	padding: 4px;
+	text-align: right;
 }
 .front .view-mode-events img {
 	width: 100%;
@@ -409,6 +441,11 @@ h2 {
 
 /* MEDIA QUERIES ************************* */
 /* ----- Responsive ------------------ */
+@media (min-width: 767px) {
+	#block-views-upcoming-events-block-3 .group-right {
+		width: 62%;
+	}
+}
 @media (max-width: 767px) {
 	body {
 		background: #ebedee url("../images/bg.png") repeat;
